@@ -12,37 +12,39 @@ window.onload = () => {
   //console.log("Hello from the console " + randomNumber);
   //document.querySelector(".excuse").innerHTML = randomNumber;
 
-  let excuseGenerator = () => {
-    const excuse_object = {
-      who: ["The dog", "My grandma", "His turtle", "My bird"],
-      action: ["ate", "peed", "crushed ", "broke"],
-      what: ["my homework", "the keys", "the car"],
-      when: [
-        "before the class",
-        "right on time",
-        "when I finished",
-        "during my lunch",
-        "while I was praying"
-      ]
-    };
-    let element = Object.keys(excuse_object);
-    let str = "";
+  //let my_excuse = excuseGenerator();
+  //document.querySelector(".excuse").innerHTML = my_excuse;
+  //document.querySelector(".excuse").innerHTML = excuseGenerator();
+  document.querySelector("#button").addEventListener("click", () => {
+    document.querySelector(".excuse").innerHTML = excuseGenerator();
+  });
+};
 
-    element.forEach(element => {
-      console.log(element);
-      //console.log(excuse_elemets[element].length);
-      var random_int = Math.floor(
-        Math.random() * excuse_object[element].length
-      );
-      console.log(random_int);
-      console.log(excuse_object[element][random_int]);
-      let excuse_element = excuse_object[element][random_int];
-      str += excuse_element + " ";
-    });
-
-    return str;
+let excuseGenerator = () => {
+  const excuse_object = {
+    who: ["The dog", "My grandma", "His turtle", "My bird"],
+    action: ["ate", "peed", "crushed ", "broke"],
+    what: ["my homework", "the keys", "the car"],
+    when: [
+      "before the class",
+      "right on time",
+      "when I finished",
+      "during my lunch",
+      "while I was praying"
+    ]
   };
-  let my_excuse = excuseGenerator();
+  let element = Object.keys(excuse_object);
+  let str = "";
 
-  document.querySelector(".excuse").innerHTML = my_excuse;
+  element.forEach(element => {
+    console.log(element);
+    //console.log(excuse_elemets[element].length);
+    var random_int = Math.floor(Math.random() * excuse_object[element].length);
+    console.log(random_int);
+    console.log(excuse_object[element][random_int]);
+    let excuse_element = excuse_object[element][random_int];
+    str += excuse_element + " ";
+  });
+
+  return str;
 };
