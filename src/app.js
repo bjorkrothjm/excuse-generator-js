@@ -7,13 +7,9 @@ import "./assets/img/4geeks.ico";
 
 window.onload = () => {
   //write your code here
-  //console.log("Hello Rigo from the console!");
-  let randomNumber = Math.random() * 10;
   //console.log("Hello from the console " + randomNumber);
   //document.querySelector(".excuse").innerHTML = randomNumber;
 
-  //let my_excuse = excuseGenerator();
-  //document.querySelector(".excuse").innerHTML = my_excuse;
   //document.querySelector(".excuse").innerHTML = excuseGenerator();
   document.querySelector("#button").addEventListener("click", () => {
     document.querySelector(".excuse").innerHTML = excuseGenerator();
