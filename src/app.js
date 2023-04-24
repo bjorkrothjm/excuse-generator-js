@@ -9,34 +9,13 @@ window.onload = () => {
   //write your code here
   //console.log("Hello Rigo from the console!");
   let randomNumber = Math.random() * 10;
-  console.log("Hello from the console " + randomNumber);
-  document.querySelector(".excuse").innerHTML = randomNumber;
+  //console.log("Hello from the console " + randomNumber);
+  //document.querySelector(".excuse").innerHTML = randomNumber;
 
-  const excuse_elemets = {
-    who: ["The dog", "My grandma", "His turtle", "My bird"],
-    action: ["ate", "peed", "crushed", "broke"],
-    what: ["my homework", "the keys", "the car"],
-    when: [
-      "before the class",
-      "right on time",
-      "when I finished",
-      "during my lunch",
-      "while I was praying"
-    ]
-  };
-  console.log(excuse_elemets);
-
-  for (let array of excuse_elemets) {
-    console.log(array);
-  }
-};
-
-/*
-
-  let generateExcuse = () => {
-    const excuse_elemets = {
+  let excuseGenerator = () => {
+    const excuse_object = {
       who: ["The dog", "My grandma", "His turtle", "My bird"],
-      action: ["ate", "peed", "crushed", "broke"],
+      action: ["ate", "peed", "crushed ", "broke"],
       what: ["my homework", "the keys", "the car"],
       when: [
         "before the class",
@@ -46,43 +25,24 @@ window.onload = () => {
         "while I was praying"
       ]
     };
-    console.log(excuse_elemets);
+    let element = Object.keys(excuse_object);
+    let str = "";
 
-    // creating the excuse
-    function generator(array) {
-      for (let i = 0; i < 4; i++) {
-        return array[Math.floor(Math.random() * array.lenght)];
-      }
-    }
-    for (let new_array of excuse_elemets) {
-      var str = "";
-      str += generator(new_array);
-    }
+    element.forEach(element => {
+      console.log(element);
+      //console.log(excuse_elemets[element].length);
+      var random_int = Math.floor(
+        Math.random() * excuse_object[element].length
+      );
+      console.log(random_int);
+      console.log(excuse_object[element][random_int]);
+      let excuse_element = excuse_object[element][random_int];
+      str += excuse_element + " ";
+    });
+
     return str;
   };
+  let my_excuse = excuseGenerator();
+
+  document.querySelector(".excuse").innerHTML = my_excuse;
 };
-
-/*
-let generateExcuse () => {
-    const excuse_elemets = {
-      who: ["The dog", "My grandma", "His turtle", "My bird"],
-      action: ["ate", "peed", "crushed", "broke"],
-      what: ["my homework", "the keys", "the car"],
-      when: ["before the class","right on time","when I finished","during my lunch", "while I was praying"]
-    };
-
-
-    // creating the excuse
-    function generator(array) {
-      for (let i = 0; i < 4; i++) {
-        return array[Math.floor(Math.random() * array.lenght)];
-      };
-    };
-    
-    for (let array of excuse_elemets) {
-      var str = "";
-      str += generator(array);
-    };
-    return str;
-};
-*/
